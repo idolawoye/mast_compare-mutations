@@ -14,7 +14,6 @@ RUN conda create -n mutation-env -c bioconda -c conda-forge \
     python-docx=1.2.0 \
     jinja2=3.1.6 \
     pysam=0.22.1 \
-    docxptl \
     && conda clean -a
 
 # Add environment to PATH
