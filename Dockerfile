@@ -16,7 +16,7 @@ RUN conda create -n mutation-env -c bioconda -c conda-forge \
     pysam=0.22.1 \
     && conda clean -a
 
-RUN conda run -n mutation-env pip install docxptl==0.19.0
+RUN /opt/conda/envs/mutation-env/bin/pip install docxptl==0.19.0
 
 # Add environment to PATH
 ENV PATH /opt/conda/envs/mutation-env/bin:$PATH
@@ -25,6 +25,6 @@ ENV PATH /opt/conda/envs/mutation-env/bin:$PATH
 WORKDIR /data
 
 # Verify installations
-RUN conda run -n mutation-env pip show pandas
+RUN /opt/conda/envs/mutation-env/bin/pip show pandas
 
 CMD ["/bin/bash"]
