@@ -17,7 +17,7 @@ RUN conda create -n mutation-env -c bioconda -c conda-forge \
     pip \
     && conda clean -a
 
-RUN /opt/conda/envs/mutation-env/bin/pip install docxptl==0.19.0
+RUN /opt/conda/envs/mutation-env/bin/pip install docxptl
 
 # Add environment to PATH
 ENV PATH /opt/conda/envs/mutation-env/bin:$PATH
