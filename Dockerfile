@@ -9,15 +9,15 @@ RUN conda config --set subdir linux-64
 # Create conda environment with both tools from bioconda
 RUN conda create -n mutation-env -c bioconda -c conda-forge \
     python=3.10 \
-    pandas=2.3.3 \
-    biopython=1.86 \
-    python-docx=1.2.0 \
-    jinja2=3.1.6 \
-    pysam=0.22.1 \
+    pandas \
+    biopython \
+    python-docx \
+    jinja2 \
+    pysam \
     pip \
     && conda clean -a
 
-RUN /opt/conda/envs/mutation-env/bin/pip install docxptl
+RUN /opt/conda/envs/mutation-env/bin/pip install docxtpl
 
 # Add environment to PATH
 ENV PATH /opt/conda/envs/mutation-env/bin:$PATH
